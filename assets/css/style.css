@@ -6096,3 +6096,127 @@ del {
 
 }
 
+.about-premium {
+    padding: 120px 0;
+    background: #f9fbff;
+}
+
+/* Tag pequena */
+.about-tag {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #2F80ED, #64478B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Título forte */
+.about-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #1d1d1d;
+}
+
+/* Texto leve */
+.about-description {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+/* Botão premium */
+.btn-premium {
+    display: inline-block;
+    padding: 14px 34px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #2F80ED, #64478B);
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(47,128,237,0.25);
+}
+
+/* Grid estatísticas */
+.stats-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 18px;
+    text-align: left;
+    border: none;
+    transition: none;
+
+    /* sombra fixa elegante */
+    box-shadow: 
+        0 15px 35px rgba(47, 128, 237, 0.18),
+        0 8px 20px rgba(142, 45, 226, 0.12);
+}
+
+/* número */
+.stat-card h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    background: linear-gradient(45deg, #2F80ED, #8E2DE2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* texto */
+.stat-card p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+
+    .about-premium .col-lg-6:first-child {
+        background: #ffffff;
+        padding: 30px 25px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+
+        box-shadow:
+            0 20px 40px rgba(47, 128, 237, 0.15),
+            0 10px 25px rgba(142, 45, 226, 0.12);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .about-premium {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .about-text-box {
+        width: 92%;
+        margin: 20px auto 30px auto; /* espaço em cima agora */
+        background: #fff;
+        padding: 28px 22px;
+        border-radius: 18px;
+
+        box-shadow:
+            0 25px 50px rgba(47, 128, 237, 0.18),
+            0 15px 30px rgba(142, 45, 226, 0.15);
+    }
+
+}
