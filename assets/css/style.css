@@ -6156,7 +6156,7 @@ del {
 
 .stat-card {
     background: #ffffff;
-    padding: 35px 30px;
+    padding: 15px;
     border-radius: 18px;
     text-align: left;
     border: none;
@@ -6170,7 +6170,7 @@ del {
 
 /* número */
 .stat-card h3 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 6px;
     background: linear-gradient(45deg, #2F80ED, #8E2DE2);
@@ -6187,36 +6187,25 @@ del {
 
 @media (max-width: 768px) {
 
-    .about-premium .col-lg-6:first-child {
-        background: #ffffff;
-        padding: 30px 25px;
-        border-radius: 20px;
-        margin-bottom: 30px;
-
-        box-shadow:
-            0 20px 40px rgba(47, 128, 237, 0.15),
-            0 10px 25px rgba(142, 45, 226, 0.12);
-    }
-
-}
-
-@media (max-width: 768px) {
-
     .about-premium {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding: 60px 0;
     }
 
-    .about-text-box {
-        width: 92%;
-        margin: 20px auto 30px auto; /* espaço em cima agora */
-        background: #fff;
-        padding: 28px 22px;
-        border-radius: 18px;
+    .about-premium .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-        box-shadow:
-            0 25px 50px rgba(47, 128, 237, 0.18),
-            0 15px 30px rgba(142, 45, 226, 0.15);
+    .about-premium .col-lg-6 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .stats-wrapper {
+        margin-top: 30px;
+        /* Garante que a grid não "estoure" o container */
+        width: 100%; 
+        gap: 15px; /* Reduzi um pouco o espaço entre cards no mobile */
     }
 
 }
@@ -6226,6 +6215,18 @@ del {
     .stats-grid {
         width: 92%;
         margin: 0 auto;
+        padding: 0;
     }
 
+}
+
+.about-text-box {
+    background: #fff;
+    padding: 28px 22px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 25px 50px rgba(47, 128, 237, 0.18),
+        0 15px 30px rgba(142, 45, 226, 0.15);
 }
