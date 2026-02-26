@@ -6155,6 +6155,8 @@ del {
 }
 
 .stat-card {
+  width: 100%;
+        margin-bottom: 10px;
     background: #ffffff;
     padding: 15px;
     border-radius: 18px;
@@ -6188,7 +6190,7 @@ del {
 @media (max-width: 768px) {
 
     .about-premium {
-        padding: 60px 0;
+        padding: 60px 15px;
     }
 
     .about-premium .container {
@@ -6202,10 +6204,12 @@ del {
     }
 
     .stats-wrapper {
+     .stats-wrapper {
         margin-top: 30px;
-        /* Garante que a grid não "estoure" o container */
-        width: 100%; 
-        gap: 15px; /* Reduzi um pouco o espaço entre cards no mobile */
+        padding: 0 10px; /* Folga extra interna para os cards */
+        gap: 20px;       /* Espaço entre os cards verticalmente */
+        display: flex;   /* No mobile, flex-direction column costuma funcionar melhor */
+        flex-direction: column;
     }
 
 }
@@ -6229,4 +6233,6 @@ del {
     box-shadow:
         0 25px 50px rgba(47, 128, 237, 0.18),
         0 15px 30px rgba(142, 45, 226, 0.15);
+}
+
 }
