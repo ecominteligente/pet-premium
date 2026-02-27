@@ -80,7 +80,7 @@
     color: #fff;
     font-weight: bold; }
   .slicknav_menu .slicknav_icon-bar {
-      background-color: #dca73a !important;
+      background-color: linear-gradient(90deg, #2F80ED, #64478B) !important;;
     }
 
     .slicknav_btn {
@@ -225,7 +225,7 @@
 .slicknav_nav .slicknav_row:hover,
 .slicknav_nav .slicknav_row:hover .slicknav_arrow {
     border-radius: 0;
-    background-color: #F79960;
+    background-color: linear-gradient(90deg, #2F80ED, #64478B) !important;;
     background-color: transparent;
     color: #000;
 }
@@ -256,7 +256,16 @@
 	position: relative;
 	top: -9px;
 }
-.slicknav_menu .slicknav_nav a:hover {
-	background: transparent;
-	color: #dca73a;
+.slicknav_menu .slicknav_nav a:hover, 
+.slicknav_menu .slicknav_nav a:active {
+    /* 1. Aplicamos o degradê verde/azul no fundo */
+    background: linear-gradient(90deg, #2F80ED, #64478B) !important;
+    
+    /* 2. Forçamos a cor do texto para branco para ele não sumir */
+    color: #ffffff !important;
+    
+    /* 3. Ajustes de arredondamento e suavidade */
+    border-radius: 5px;
+    transition: 0.3s ease;
+    text-decoration: none;
 }

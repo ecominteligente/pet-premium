@@ -2032,14 +2032,14 @@ hr {
   top: -38px;
 }
 .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
-  background-color: #ff2121 !important;
+  background: linear-gradient(90deg, #2F80ED, #64478B) !important;
 }
 .mobile_menu .slicknav_menu .slicknav_nav {
   margin-top: 15px !important;
 }
 .mobile_menu .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
-  color: #ff2121;
+  color: linear-gradient(90deg, #2F80ED, #64478B) !important;
 }
 .mobile_menu .slicknav_menu .slicknav_nav a {
   font-size: 15px;
@@ -5637,7 +5637,7 @@ del {
 
 /* Se quiser que o banner tenha um fundo degradê sem ser full width */
 .slider-area {
-  background: linear-gradient(135deg, #4facfe 0%, #a29bfe 100%) !important;
+  background: linear-gradient(90deg, #2F80ED, #64478B) !important;
   padding: 40px 0; /* Espaço para o banner respirar */
 }
 
@@ -5815,7 +5815,7 @@ del {
 
 /* radius só fora (desktop) */
 .hero-mosaico .col-lg-6:first-child .hero-mosaico-item img {
-  border-radius: 14px 0 0 14px;
+  border-radius: 14px !important;
 }
 
 .hero-mosaico .col-lg-6:last-child .hero-mosaico-item img {
@@ -5830,6 +5830,7 @@ del {
   .hero-mosaico-item img {
     height: auto;
     aspect-ratio: 1/1; /* proporção bonita mobile */
+    border-radius: 0; /* remove radius para colar nas bordas do celular */
   }
 
   /* remove radius lateral */
@@ -5865,30 +5866,38 @@ del {
 
 /* texto */
 .hero-content {
-  color: #fff;
+  color: #ffffff;
   padding: 40px;
 }
 
+/* Título */
 .hero-content h1 {
   font-size: 42px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
+/* Parte mais leve do título */
 .hero-content h1 span {
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 600;
+  opacity: 0.85; /* cria hierarquia elegante */
 }
 
+/* Texto do preço */
 .hero-price {
   font-size: 18px;
   margin-bottom: 25px;
-  color: #000;
+  color: rgba(255,255,255,0.85); /* substitui o preto */
 }
 
+/* Valor forte */
 .hero-price strong {
   font-size: 34px;
   color: #ffd54f;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.25); /* dá destaque real */
 }
 
 /* botão */
@@ -5910,7 +5919,7 @@ del {
 /* ===== 1. RESET GLOBAL ===== */
 .hero-mosaico-item {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 0 !important;
     overflow: hidden; /* Garante que a imagem respeite o arredondado */
     display: block;
 }
@@ -5944,7 +5953,7 @@ del {
 
     .hero-mosaico-item img {
         height: 450px;
-        border-radius: 20px;
+        
     }
 
     /* Coluna do Texto */
@@ -5958,6 +5967,7 @@ del {
 /* ===== 3. MOBILE (Largura Total) ===== */
 @media (max-width: 991px) {
     .hero-petcare {
+      margin: 0;
         width: 100% !important;
         padding: 0 !important;
         margin-top: 0 !important;
@@ -5971,12 +5981,16 @@ del {
 
     .hero-mosaico-item {
         border-radius: 0; /* Imagem 'cola' nas bordas do celular */
+        padding: 0 16px; /* 👈 espaço lateral elegante */
     }
 
     .hero-mosaico-item img {
-        height: 280px;
-        border-radius: 0;
-        margin-top: 20px;
+        width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 16px; /* 👈 radius volta só na imagem */
+    margin-top: 20px;
     }
 
     .hero-content {
@@ -6096,10 +6110,31 @@ del {
 
 }
 
+/* Sobe a seção no desktop e mobile */
 .about-premium {
-    padding: 120px 0;
-    background: #f9fbff;
+    padding-top: 30px !important; /* Ajuste esse valor para subir mais ou menos */
+    padding-bottom: 120px;
+    background: #fdfaff; /* Tom lilás que você pediu */
 }
+
+/* Garante que o título dentro dela também não tenha margem sobrando no topo */
+.about-premium .section-tittle {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .about-premium {
+    padding-top: 80px !important; /* Ajuste esse valor para subir mais ou menos */
+    padding-bottom: 80px;
+    background: #fdfaff; /* Tom lilás que você pediu */
+}
+}
+
+/* Garante que o título dentro dela também não tenha margem sobrando no topo */
+.about-premium .section-tittle {
+    margin-top: 0 !important;
+}
+
 
 /* Tag pequena */
 .about-tag {
@@ -6235,4 +6270,377 @@ del {
         0 15px 30px rgba(142, 45, 226, 0.15);
 }
 
+}
+
+@media (max-width: 991.98px) {
+
+  .hero-petcare {
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .hero-petcare .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+}
+
+/* ===== GALERIA QUADRADA PREMIUM ===== */
+
+/* ===== 1. SEÇÃO E HEADER ===== */
+.gallery-trip-square {
+    padding: 80px 0;
+    background: #f8f9ff;
+}
+
+.gallery-header {
+    margin-bottom: 40px;
+}
+
+/* Padrão de Gradiente para as Tags */
+.gallery-header span, 
+.section-tittle span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #2F80ED, #64478B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+}
+
+.gallery-title, 
+.section-tittle h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 15px;
+}
+
+/* ===== ESTILO DESKTOP (Grid) ===== */
+.gallery-trip-square { padding: 80px 0; background: #f9fbff; }
+
+.product-mini-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Vertical no Desktop */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.card-img-box { width: 100%; aspect-ratio: 1/1; flex-shrink: 0; }
+.card-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-info-box { 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    flex-grow: 1; 
+}
+
+.card-text h3 { font-size: 17px; font-weight: 700; color: #1d1d1d; margin-bottom: 8px; }
+.card-text p { font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.4; }
+
+.card-footer-action { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.price { font-weight: 700; color: #2F80ED; font-size: 16px; }
+
+.btn-catalog {
+    padding: 8px 15px;
+    background: linear-gradient(90deg, #11998e, #38ef7d) !important;
+    color: #fff !important;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* ===== MOBILE PADRONIZADO COM RESPIRO ===== */
+@media (max-width: 576px) {
+
+  /* coluna mantém respiro lateral */
+  .col-12 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* lista ou swiper com espaçamento vertical igual */
+  .product-list,
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product-mini-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    height: 140px;
+    padding: 12px;
+    margin: 0; /* evita duplicação */
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+  }
+
+  /* imagem fixa */
+  .card-img-box {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+
+  .card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* conteúdo */
+  .card-info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-text h3 {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .card-text p {
+    font-size: 11px;
+    margin-bottom: 6px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer-action { padding-top: 5px; }
+  .price { font-size: 14px; }
+  .btn-catalog { padding: 5px 12px; font-size: 11px; }
+
+}
+
+/* Badge de Destaque (Mais Pedido / Promoção) */
+.badge-premium {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    background: linear-gradient(90deg, #2F80ED, #64478B);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(47, 128, 237, 0.3);
+}
+
+/* Estrelinhas em Degradê */
+.card-rating {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.card-rating i, 
+.card-rating span {
+    font-size: 12px;
+    font-weight: 700;
+    /* Aplica o degradê do site no ícone */
+    background: linear-gradient(90deg, #2F80ED, #64478B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-rating span {
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+/* Ajuste no Título para não encostar nas estrelas */
+.card-text h3 {
+    margin-bottom: 2px !important;
+}
+
+/* No Mobile: Ajuste do Badge */
+@media (max-width: 576px) {
+    .badge-premium {
+        top: 5px;
+        left: 5px;
+        font-size: 9px;
+        padding: 2px 8px;
+    }
+}
+
+/* Garante que o link não mude as cores do card */
+a.product-mini-card {
+    text-decoration: none !important;
+    display: flex;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+a.product-mini-card:hover {
+    transform: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* Cursor de clique em todo o card */
+.product-mini-card {
+    cursor: pointer;
+}
+
+/* ===== SESSÃO SERVIÇOS EXTRA ===== */
+
+.extra-services-area {
+    background: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.single-extra-service {
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+    height: 100%;
+    transition: 0.35s ease;
+    border: 1px solid #f0f0f0;
+
+    /* sombra base + glow lilás-azul */
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.05),
+        0 0 0 rgba(168,139,250,0),
+        0 0 0 rgba(96,165,250,0);
+}
+
+.single-extra-service:hover {
+    box-shadow: 
+        0 18px 40px rgba(0,0,0,0.08),
+        0 0 28px rgba(168,139,250,0.22),
+        0 0 38px rgba(96,165,250,0.18);
+}
+
+.service-icon i {
+    font-size: 50px;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.service-cap h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1d1d1d;
+}
+
+.service-cap p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsivo para Mobile */
+@media (max-width: 576px) {
+    .single-extra-service {
+        padding: 30px 20px;
+        margin-bottom: 20px; /* Mantendo o espaço entre cards que ajustamos */
+    }
+    
+    .service-icon i {
+        font-size: 40px;
+    }
+    
+    .service-cap h3 {
+        font-size: 19px;
+    }
+}
+
+/* No Desktop: Comportamento Padrão (Garante que os cards quebrem linha) */
+.mobile-scroll-row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards fiquem um embaixo do outro no PC */
+}
+
+/* No Mobile: Ativa o Carrossel */
+@media (max-width: 576px) {
+    .mobile-scroll-row {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Força ficar um ao lado do outro apenas no celular */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        scrollbar-width: none; 
+    }
+
+    .mobile-scroll-row::-webkit-scrollbar {
+        display: none; /* Esconde a barra de rolagem */
+    }
+
+    /* Ajuste de largura dos cards no mobile para aparecer a 'beirinha' do próximo */
+    .mobile-scroll-row .col-10 {
+        flex: 0 0 85% !important;
+        max-width: 85% !important;
+    }
+}
+
+/* No Desktop: Mantém o que você já tem (Grid normal) */
+.extra-services-area .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* No Mobile: Ativa o Carrossel automaticamente */
+@media (max-width: 767px) {
+    .extra-services-area .row {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Força os cards a ficarem na mesma linha */
+        overflow-x: auto !important; /* Ativa o scroll lateral */
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+        gap: 0; /* O Bootstrap g-4 já cuida do espaço */
+    }
+
+    /* Esconde a barra de rolagem para um visual mais limpo */
+    .extra-services-area .row::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Define a largura dos cards no mobile para aparecer o próximo ao lado */
+    .extra-services-area .col-md-6 {
+        flex: 0 0 85% !important; /* 85% da tela para mostrar que tem mais pro lado */
+        max-width: 85% !important;
+        scroll-snap-align: center;
+    }
+}
+
+/* espaçamento vertical entre linhas no desktop */
+@media (min-width: 768px) {
+  .extra-services-area .row {
+    row-gap: 30px;
+  }
 }

@@ -198,7 +198,18 @@
         });
       }
 
-
+$(document).ready(function(){
+    // Detecta o clique em qualquer lugar do documento
+    $(document).click(function (event) {
+        var clickover = $(event.target);
+        var _opened = $(".slicknav_nav").is(":visible");
+        
+        // Verifica se o menu está aberto e se o clique NÃO foi no botão ou dentro do menu
+        if (_opened && !clickover.closest('.slicknav_menu').length) {
+            $(".slicknav_btn").click(); // Simula o clique no botão para fechar
+        }
+    });
+});
 
 
 })(jQuery);
