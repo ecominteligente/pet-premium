@@ -199,14 +199,21 @@
       }
 
 $(document).ready(function(){
-    // Detecta o clique em qualquer lugar do documento
+    // 1. Fecha ao clicar FORA do menu (o que você já tinha)
     $(document).click(function (event) {
         var clickover = $(event.target);
         var _opened = $(".slicknav_nav").is(":visible");
         
-        // Verifica se o menu está aberto e se o clique NÃO foi no botão ou dentro do menu
         if (_opened && !clickover.closest('.slicknav_menu').length) {
-            $(".slicknav_btn").click(); // Simula o clique no botão para fechar
+            $(".slicknav_btn").click();
+        }
+    });
+
+    // 2. NOVO: Fecha ao clicar em um LINK do menu (âncora #)
+    $(document).on('click', '.slicknav_nav a[href^="#"]', function() {
+        var _opened = $(".slicknav_nav").is(":visible");
+        if (_opened) {
+            $(".slicknav_btn").click();
         }
     });
 });
