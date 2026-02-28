@@ -1,0 +1,194 @@
+
+/* ===== HERO MOSAICO FULL ===== */
+
+.hero-mosaico {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* radius só fora (desktop) */
+.hero-mosaico .col-lg-6:first-child .hero-mosaico-item img {
+  border-radius: 14px !important;
+}
+
+.hero-mosaico .col-lg-6:last-child .hero-mosaico-item img {
+  border-radius: 0 14px 14px 0;
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 991.98px) {
+
+  /* altura proporcional */
+  .hero-mosaico-item img {
+    height: auto;
+    aspect-ratio: 1/1; /* proporção bonita mobile */
+    border-radius: 0; /* remove radius para colar nas bordas do celular */
+  }
+
+  /* remove radius lateral */
+  .hero-mosaico .col-lg-6:first-child .hero-mosaico-item img,
+  .hero-mosaico .col-lg-6:last-child .hero-mosaico-item img {
+    border-radius: 12px;
+  }
+
+  /* espaço entre imagens */
+  .hero-mosaico .col-lg-6 {
+    padding-bottom: 12px;
+  }
+
+}
+
+/* ===== HERO PETCARE ===== */
+.hero-petcare {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #6db9ff, #8b7bff);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* imagem */
+.hero-mosaico-item img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  
+}
+
+/* texto */
+.hero-content {
+  color: #ffffff;
+  padding: 40px;
+}
+
+/* Título */
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Parte mais leve do título */
+.hero-content h1 span {
+  font-size: 32px;
+  font-weight: 600;
+  opacity: 0.85; /* cria hierarquia elegante */
+}
+
+/* Texto do preço */
+.hero-price {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: rgba(255,255,255,0.85); /* substitui o preto */
+}
+
+/* Valor forte */
+.hero-price strong {
+  font-size: 34px;
+  color: #ffd54f;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.25); /* dá destaque real */
+}
+
+/* botão */
+.btn-agendar {
+  display: inline-block;
+  background: #00c48c;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-agendar:hover {
+  background: #00a877;
+}
+
+/* ===== 1. RESET GLOBAL ===== */
+.hero-mosaico-item {
+    width: 100%;
+    border-radius: 0 !important;
+    overflow: hidden; /* Garante que a imagem respeite o arredondado */
+    display: block;
+}
+
+.hero-mosaico-item img {
+    width: 100% !important;
+    display: block;
+    object-fit: cover;
+    margin-left: 0 !important; /* Resetando o que causou o erro */
+}
+
+/* ===== 2. DESKTOP (Alinhado com o Menu) ===== */
+@media (min-width: 992px) {
+    .hero-petcare {
+        max-width: 1200px; /* Largura padrão para alinhar com seu menu */
+        margin: 0 auto;
+        padding: 40px 0; /* Ajuste para encostar mais no menu */
+    }
+
+    .hero-mosaico .row {
+        align-items: center;
+        margin: 0 !important;
+    }
+
+    /* Coluna da Imagem */
+    .hero-mosaico .col-lg-6:first-child {
+        flex: 0 0 60%;
+        max-width: 60%;
+        padding-left: 26px !important;
+    }
+
+    .hero-mosaico-item img {
+        height: 450px;
+        
+    }
+
+    /* Coluna do Texto */
+    .hero-mosaico .col-lg-6:last-child {
+        flex: 0 0 40%;
+        max-width: 40%;
+        padding-left: 60px;
+    }
+}
+
+/* ===== 3. MOBILE (Largura Total) ===== */
+@media (max-width: 991px) {
+    .hero-petcare {
+      margin: 0;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .hero-mosaico .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 !important;
+    }
+
+    .hero-mosaico-item {
+        border-radius: 0; /* Imagem 'cola' nas bordas do celular */
+        padding: 0 16px; /* 👈 espaço lateral elegante */
+    }
+
+    .hero-mosaico-item img {
+        width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 16px; /* 👈 radius volta só na imagem */
+    margin-top: 20px;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+        text-align: center;
+    }
+}
