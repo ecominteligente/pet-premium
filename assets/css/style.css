@@ -6896,3 +6896,11 @@ a.product-mini-card:hover {
     scroll-margin-top: 100px;
   }
 }
+
+/* ===== Ajuste ícone hamburguer alinhado com logo ===== */
+/* alinhamento fino do hamburguer */
+.header-area .slicknav_btn {
+  top: -30px !important;
+  transform: none !important;
+  margin-top: 0 !important;
+}
