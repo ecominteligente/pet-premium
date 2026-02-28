@@ -1501,7 +1501,7 @@ hr {
   }
 }
 .section-padding30 {
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 140px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
@@ -2779,103 +2779,7 @@ hr {
   color: #fff;
   margin-left: 10px;
 }
-.testimonial-area .testimonial-caption .testimonial-top-cap img {
-  margin-bottom: 50px;
-  width: auto;
-  display: inline-block;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap img {
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 575px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap img {
-    margin-bottom: 30px;
-  }
-}
-.testimonial-area .testimonial-caption .testimonial-top-cap p {
-  color: #fff;
-  font-weight: 400;
-  line-height: 2.1;
-  padding: 0 26px;
-  margin-bottom: 50px;
-  font-size: 24px;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap p {
-    font-size: 18px;
-    line-height: 1.6;
-    font-size: 16px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap p {
-    margin-bottom: 25px;
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 0;
-    font-size: 17px;
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap p {
-    margin-bottom: 25px;
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 0 5px;
-    font-size: 18px;
-  }
-}
-@media (max-width: 575px) {
-  .testimonial-area .testimonial-caption .testimonial-top-cap p {
-    margin-bottom: 25px;
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 0 5px;
-    font-size: 18px;
-  }
-}
-.testimonial-area .testimonial-caption .testimonial-founder .founder-img img {
-  margin-bottom: 30px;
-  display: inline-block;
-  font-weight: 300;
-}
-.testimonial-area .testimonial-caption .testimonial-founder .founder-img span {
-  color: #fff;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1;
-  display: block;
-  font-family: "Muli", sans-serif;
-  margin-bottom: 10px;
-}
-.testimonial-area .dot-style .slick-dots {
-  text-align: center;
-  bottom: -49px;
-  left: 0;
-  right: 0;
-  position: absolute;
-}
-.testimonial-area .dot-style .slick-dots li {
-  display: inline-block;
-}
-.testimonial-area .dot-style .slick-dots button {
-  text-indent: -100000px;
-  height: 9px;
-  width: 9px;
-  border: 0;
-  padding: 0;
-  margin: 0 4px;
-  cursor: pointer;
-  border-radius: 50%;
-  background: red;
-}
-.testimonial-area .dot-style .slick-dots .slick-active button {
-  background: #fff;
-}
+
 .slick-initialized .slick-slide {
   outline: 0;
 }
@@ -6028,7 +5932,7 @@ del {
 /* Alvo específico para a imagem dentro do link da logo */
 .logo-pet img, 
 .header-area .logo-pet img {
-    width: 35px !important;  /* Teste com 35px para ver se ele reduz */
+    width: 25px !important;  /* Teste com 35px para ver se ele reduz */
     height: auto !important;
     max-width: 35px !important;
     display: inline-block !important;
@@ -6291,8 +6195,14 @@ del {
 
 /* ===== 1. SEÇÃO E HEADER ===== */
 .gallery-trip-square {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #f8f9ff;
+}
+
+@media (max-width: 991.98px) {
+  .gallery-trip-square {
+  padding: 15px 0;
+}
 }
 
 .gallery-header {
@@ -6323,8 +6233,6 @@ del {
 }
 
 /* ===== ESTILO DESKTOP (Grid) ===== */
-.gallery-trip-square { padding: 80px 0; background: #f9fbff; }
-
 .product-mini-card {
     background: #fff;
     border-radius: 20px;
@@ -6642,5 +6550,162 @@ a.product-mini-card:hover {
 @media (min-width: 768px) {
   .extra-services-area .row {
     row-gap: 30px;
+  }
+}
+
+
+/*==== SESSÃO DEPOIMENTOS: HOVER E SOMBRA LILÁS ====*/
+
+.testimonials {
+  padding: 40px 0; /* Removido padding lateral para o card sangrar até a borda */
+  background: #f6f3ff;
+  overflow: hidden; /* Garante que não apareça barra de rolagem no site todo */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 0 20px; /* Mantém o título alinhado com o container */
+}
+
+.section-header span {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  margin: 8px 0 0;
+}
+
+/* MOBILE: carrossel horizontal */
+.testimonials-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  /* Padding lateral interno: faz o 1º card começar alinhado, mas deslizar livre */
+  padding: 0 20px 20px 20px !important; 
+  
+  /* Remove a barra visualmente em todos os navegadores */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Esconde a barra no Chrome, Safari e Opera */
+.testimonials-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+.testimonial-card {
+  flex: 0 0 82%; /* Ocupa 82% para mostrar o início do próximo card */
+  scroll-snap-align: center; /* Centraliza o card ao soltar o dedo */
+  background: linear-gradient(180deg, #ffffff 0%, #f6f3ff 100%);
+  border-radius: 24px;
+  box-shadow: 0 6px 14px rgba(162, 155, 254, 0.25);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  object-fit: cover;
+  border: 2px solid #a29bfe;
+}
+
+.testimonial-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.testimonial-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #6c5ce7;
+}
+
+.testimonial-card span {
+  font-size: 0.85rem;
+  color: #a29bfe;
+}
+
+/* DESKTOP: grid com 4 cards */
+@media (min-width: 992px) {
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .testimonials-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    overflow: visible;
+    padding: 0 20px; /* Volta o padding para alinhar no grid desktop */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 1. Remove as margens e paddings do container do Bootstrap */
+  .testimonials .container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 2. Garante que a seção ocupe a largura total sem vácuo */
+  .testimonials {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 3. Ajusta o título para não colar na borda (já que tiramos o padding do pai) */
+  .section-header {
+    padding: 0 20px !important;
+  }
+
+  /* 4. O segredo: o track agora encosta na borda da tela */
+  .testimonials-track {
+    padding-left: 20px !important; /* Respiro apenas para o 1º card não colar */
+    padding-right: 20px !important; /* Permite ver o final do último card */
+  }
+}
+
+@media (max-width: 767px) {
+  /* 1. Aplica o respiro lateral apenas no título */
+  .testimonials .section-tittle {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
+  }
+
+  /* 2. Garante que o texto não "estique" até a borda infinita */
+  .testimonials .section-tittle h2 {
+    font-size: 27px !important; /* Tamanho vindo do seu tema */
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 3. Mantém os cards encostando na borda (sem mexer aqui) */
+  .testimonials-track {
+    margin-left: 0 !important;
+    padding-left: 20px !important;
   }
 }
